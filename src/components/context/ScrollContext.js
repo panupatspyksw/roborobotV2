@@ -67,7 +67,7 @@ export const ScrollProvider = ({ children }) => {
     ScrollTrigger.create({
       trigger: scrollRef.current,
       start: '30px top',
-      markers: true,
+      // markers: true,
       end: '30px top',
       scroller: scrollRef.current,
       onEnter: () => {
