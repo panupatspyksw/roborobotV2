@@ -6,11 +6,10 @@ import TransitionPage from '../components/layout/TransitionPage';
 
 function NotFound() {
   const { scrollRef } = useContext(ScrollContext);
-
   return (
     <TransitionPage>
       <div
-        className='w-100 h-100 d-flex align-items-center justify-content-center'
+        className='bg-white w-100 h-100 d-flex align-items-center justify-content-center'
         ref={scrollRef}
       >
         <div className='text-center hero-content'>
