@@ -256,15 +256,15 @@ function Home() {
             <form>
               <h2 className='fw-bold mb-3'>ติดต่อเรา</h2>
               <div className='mb-3'>
-                <label className='form-label'>ชื่อ - สกุล</label>
+                <label className='form-label w-100'>ชื่อ - สกุล</label>
                 <input type='text' className='form-control' />
               </div>
               <div className='mb-3'>
-                <label className='form-label'>อีเมล</label>
+                <label className='form-label w-100'>อีเมล</label>
                 <input type='email' className='form-control' />
               </div>
               <div className='mb-3'>
-                <label className='form-label'>เบอร์โทรศัพท์</label>
+                <label className='form-label w-100'>เบอร์โทรศัพท์</label>
                 <input type='text' className='form-control' />
               </div>
               <button className='w-fit btn px-5 mt-3 py-3 text-normal'>
