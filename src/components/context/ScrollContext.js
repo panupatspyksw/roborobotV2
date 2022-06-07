@@ -87,7 +87,7 @@ export const ScrollProvider = ({ children }) => {
         invalidateOnRefresh: true,
 
         scroller: scrollRef.current,
-        markers: true,
+        // markers: true,
         onEnter: () => {
           console.log('what haooern1');
           dispatch({ type: 'SwitchNavToLight' });
@@ -103,7 +103,7 @@ export const ScrollProvider = ({ children }) => {
       ScrollTrigger.create({
         trigger: ele,
         start: '0% 70px',
-        markers: true,
+        // markers: true,
         end: '100% 70px',
         scroller: scrollRef.current,
         onEnter: () => {
