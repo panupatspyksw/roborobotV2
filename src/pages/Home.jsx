@@ -225,21 +225,21 @@ function Home() {
             </h2>
             <p className='text-normal'>ครบทุกรูปแบบการเรียน Coding</p>
           </div>
-          <div className='container px-lg-5 py-5 d-flex flex-column flex-lg-row justify-content-around align-items-center'>
+          <div className='container px-lg-5 py-5 d-flex flex-column flex-lg-row justify-content-around align-items-center gap-5'>
             <SVGCard
-              className={'col-8 col-lg-30per col-xl-3'}
+              className={'col-12 col-md-8 col-lg-30per col-xl-3'}
               SVG={CODINGFOUNDATION}
               title='CODING FOUNDATION'
               paragraph='สอน coding สำหรับการฝึกตรรกะ /nโดยใช้ code studio /nฝึกสร้าง animation'
             />
             <SVGCard
-              className={'col-8 col-lg-30per col-xl-3'}
+              className={'col-12 col-md-8 col-lg-30per col-xl-3'}
               SVG={CODINGINTERMEDIATE}
               title='CODING INTERMEDIATE'
               paragraph='สอน coding สำหรับฝึกตรรกะ /nโดยใช้ GoGo Board /nรู้จักการเริ่มใช้สมองกลฝังตัว'
             />
             <SVGCard
-              className={'col-8 col-lg-30per col-xl-3'}
+              className={'col-12 col-md-8 col-lg-30per col-xl-3'}
               SVG={CODINGROBOTIC}
               title='CODING ROBOTIC'
               paragraph='สอน coding สำหรับฝึกตรรกะ /nโดยใช้ GoGo Board /nโดยมี
