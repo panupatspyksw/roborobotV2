@@ -57,6 +57,9 @@ body,html,#root{
 .text-maincolor-1{
 	color: var(--maincolor-1);
 }
+.text-subcolor-1{
+	color: var(--subcolor-1);
+}
 
 .fw-md{
 	font-weight: 600;

@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "cover": "/upload/CoverCourse1.jpg",
+    "name": "CODING FOUNDATION",
+    "detail": "สอน Coding สำหรับฝึกตรรกะโดยใช้ Code Studio ฝึกการสร้าง Animation",
+    "timecourse": 20,
+    "timeuse": "2",
+    "price": "6000"
+  },
+  {
+    "id": 1,
+    "cover": "/upload/CoverCourse2.jpg",
+    "name": "CODING INTERMEDIATE",
+    "detail": "สอน coding สำหรับฝึกตรรกะ โดยใช้ GoGo Board รู้จักการเริ่มใช้สมองกลฝังตัว",
+    "timecourse": 16,
+    "timeuse": "1",
+    "price": "5000"
+  },
+  {
+    "id": 1,
+    "cover": "/upload/CoverCourse3.jpg",
+    "name": "CODING ROBOTIC",
+    "detail": "สอน coding สำหรับฝึกตรรกะ โดยใช้ GoGo Board โดยมี Design Thinking",
+    "timecourse": 30,
+    "timeuse": "3",
+    "price": "7000"
+  }
+]
