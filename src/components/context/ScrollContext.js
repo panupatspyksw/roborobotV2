@@ -42,9 +42,6 @@ export const ScrollProvider = ({ children }) => {
       smooth: true,
     });
 
-    // scroll.destroy();
-    // scroll.init();
-
     scroll.on('scroll', ScrollTrigger.update);
 
     ScrollTrigger.scrollerProxy(scrollRef.current, {
@@ -64,10 +61,14 @@ export const ScrollProvider = ({ children }) => {
       pinType: scrollRef.current.style.transform ? 'transform' : 'fixed',
     });
 
+    ScrollTrigger.refresh();
+
     ScrollTrigger.create({
       trigger: scrollRef.current,
       start: '30px top',
       // markers: true,
+      invalidateOnRefresh: true,
+
       end: '30px top',
       scroller: scrollRef.current,
       onEnter: () => {
@@ -78,24 +79,31 @@ export const ScrollProvider = ({ children }) => {
       },
     });
 
-    document.querySelectorAll('.bg-white').forEach((ele, key) => {
+    scrollRef.current.querySelectorAll('.bg-white').forEach((ele, key) => {
       ScrollTrigger.create({
         trigger: ele,
         start: '0% 70px',
         end: '100% 70px',
+        invalidateOnRefresh: true,
+
         scroller: scrollRef.current,
+        markers: true,
         onEnter: () => {
+          console.log('what haooern1');
           dispatch({ type: 'SwitchNavToLight' });
         },
         onEnterBack: () => {
+          console.log('what haooern2');
+
           dispatch({ type: 'SwitchNavToLight' });
         },
       });
     });
-    document.querySelectorAll('.main-bg-color').forEach((ele, key) => {
+    scrollRef.current.querySelectorAll('.main-bg-color').forEach((ele, key) => {
       ScrollTrigger.create({
         trigger: ele,
         start: '0% 70px',
+        markers: true,
         end: '100% 70px',
         scroller: scrollRef.current,
         onEnter: () => {
