@@ -2,6 +2,9 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import About from '../../pages/About';
 import Home from '../../pages/Home';
 import Courses from '../../pages/Courses';
+import Login from '../../pages/Login';
+import Signup from '../../pages/Signup';
+import CheckOut from '../../pages/CheckOut';
 
 import NotFound from '../../pages/NotFound';
 import { AnimatePresence } from 'framer-motion';
@@ -16,6 +19,10 @@ function AnimatedRoutes() {
         <Route path='/' element={<Home />}></Route>
         <Route path='/about' element={<About />}></Route>
         <Route path='/courses' element={<Courses />}></Route>
+        <Route path='/login' element={<Login />}></Route>
+        <Route path='/signup' element={<Signup />}></Route>
+        <Route path='/checkout' element={<CheckOut />}></Route>
+
         <Route path='/notfound' element={<NotFound />}></Route>
         <Route path='/*' element={<NotFound />}></Route>
       </Routes>

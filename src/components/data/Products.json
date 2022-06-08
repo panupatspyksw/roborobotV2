@@ -9,7 +9,7 @@
     "price": "6000"
   },
   {
-    "id": 1,
+    "id": 2,
     "cover": "/upload/CoverCourse2.jpg",
     "name": "CODING INTERMEDIATE",
     "detail": "สอน coding สำหรับฝึกตรรกะ โดยใช้ GoGo Board รู้จักการเริ่มใช้สมองกลฝังตัว",
@@ -18,7 +18,7 @@
     "price": "5000"
   },
   {
-    "id": 1,
+    "id": 3,
     "cover": "/upload/CoverCourse3.jpg",
     "name": "CODING ROBOTIC",
     "detail": "สอน coding สำหรับฝึกตรรกะ โดยใช้ GoGo Board โดยมี Design Thinking",

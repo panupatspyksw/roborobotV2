@@ -10,14 +10,12 @@ function Courses() {
   return (
     <TransitionPage>
       <div ref={scrollRef}>
-        <div className='container mx-auto min-vh-100'>
-          <div style={{ height: '150px' }}></div>
-
-          <div className='px-5'>
-            <div className='d-flex mb-5 justify-content-between align-items-center'>
+        <div className='container mx-auto min-vh-100 bg-white'>
+          <div className='pt-5 pb-4'></div>
+          <div className='px-3 px-lg-5 py-5'>
+            <div className='d-flex flex-column gap-3 flex-md-row mb-4 justify-content-between align-items-center'>
               {/* filter */}
-
-              <div className='col-4'>
+              <div className='col-12 col-md-4'>
                 <div className='dropdown'>
                   <button
                     className='w-fit btn px-4 py-3 text-normal dropdown-toggle f-eng'
@@ -68,7 +66,7 @@ function Courses() {
                 </div>
               </div>
               {/* search */}
-              <div className='col-4'>
+              <div className='col-12 col-md-4'>
                 <div className='input-group input-group-lg m-0 positoin-relative'>
                   <span
                     className='position-absolute top-50 translate-middle-y'
@@ -85,22 +83,13 @@ function Courses() {
                 </div>
               </div>
             </div>
-            <div className='row pb-5'>
+            <div className='row '>
               {data.map(
                 (e, i) =>
                   (Select === e.name || Select === 'ALL') && (
-                    <ProductCard props={e} />
+                    <ProductCard props={e} key={e.name} />
                   )
               )}
-              {/* {(Select === 'CODING FOUNDATION' || Select === 'ALL') && (
-                <ProductCard />
-              )}
-              {(Select === 'CODING INTERMEDIATE' || Select === 'ALL') && (
-                <ProductCard />
-              )}
-              {(Select === 'CODING ROBOTIC' || Select === 'ALL') && (
-                <ProductCard />
-              )} */}
             </div>
           </div>
         </div>

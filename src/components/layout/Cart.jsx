@@ -1,12 +1,20 @@
+import { useContext } from 'react';
+import SessionContext from '../context/SessionContext';
+
 function Cart() {
+  const { carts } = useContext(SessionContext);
+
   return (
     <div className='position-relative'>
-      <span
-        className='position-absolute top-0 start-100 translate-middle bg-SUBCOLOR-3-G text-white '
-        style={{ padding: '0 7px 0px 7px', borderRadius: '30px' }}
-      >
-        0
-      </span>
+      {carts.length > 0 && (
+        <span
+          className='f-eng position-absolute top-0 start-100 translate-middle bg-SUBCOLOR-3-G text-white '
+          style={{ padding: '0 8.5px 0px 8.5px', borderRadius: '30px' }}
+        >
+          {carts.length}
+        </span>
+      )}
+
       <svg
         width='25'
         height='25'

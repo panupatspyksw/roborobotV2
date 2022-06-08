@@ -6,21 +6,24 @@ import { ScrollProvider } from './components/context/ScrollContext';
 import AnimatedRoutes from './components/layout/AnimatedRoutes';
 import { PageTransitionProvider } from './components/context/PageTransitionContext';
 import PageTransition from './components/layout/PageTransition';
+import { SessionProvider } from './components/context/SessionContext';
 function App() {
   return (
-    <>
-      <HeaderProvider>
-        <ScrollProvider>
-          <Router>
+    <Router>
+      <SessionProvider>
+        <HeaderProvider>
+          <ScrollProvider>
+            {/* <Router> */}
             <Header />
             <PageTransitionProvider>
               <PageTransition />
               <AnimatedRoutes />
             </PageTransitionProvider>
-          </Router>
-        </ScrollProvider>
-      </HeaderProvider>
-    </>
+            {/* </Router> */}
+          </ScrollProvider>
+        </HeaderProvider>
+      </SessionProvider>
+    </Router>
   );
 }
 

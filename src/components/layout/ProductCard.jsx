@@ -1,8 +1,16 @@
-import { FaClock, FaCalendar, FaShoppingCart } from 'react-icons/fa';
+import { FaClock, FaCalendar } from 'react-icons/fa';
+import { BsFillCartDashFill, BsFillCartPlusFill } from 'react-icons/bs';
+
+import { useContext } from 'react';
+import SessionContext from '../context/SessionContext';
+
 function ProductCard({ props }) {
-  const { cover, name, detail, timecourse, timeuse, price } = props;
+  const { addItemCart, removeItemCart, checkItemNotInCarts } =
+    useContext(SessionContext);
+
+  const { cover, name, detail, timecourse, timeuse, price, id } = props;
   return (
-    <div className='col-12 col-lg-4'>
+    <div className='col-12 col-lg-4 pb-4' id={id}>
       <div
         className='w-100 overflow-hidden shadow '
         style={{
@@ -35,10 +43,23 @@ function ProductCard({ props }) {
             </div>
             <div className='ms-auto fw-bold text-normal'>฿{price}</div>
           </div>
-          <button className='btn w-100 py-3 d-flex align-items-center justify-content-center mt-3'>
-            <FaShoppingCart className='me-3 ' />
-            เพิ่มลงตะกร้า
-          </button>
+          {checkItemNotInCarts(props) ? (
+            <button
+              className='btn w-100 py-3 d-flex align-items-center justify-content-center mt-3'
+              onClick={() => addItemCart(props)}
+            >
+              <BsFillCartPlusFill className='me-3 fs-4' />
+              เพิ่มลงตะกร้า
+            </button>
+          ) : (
+            <button
+              className='btn bg-SUBCOLOR-3-G-vt border-0 rounded-pill btn-danger w-100 py-3 d-flex align-items-center justify-content-center mt-3'
+              onClick={() => removeItemCart(props)}
+            >
+              <BsFillCartDashFill className='me-3 fs-4' />
+              นำออกจากตะกร้า
+            </button>
+          )}
         </div>
       </div>
     </div>

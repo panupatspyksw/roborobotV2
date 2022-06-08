@@ -35,8 +35,6 @@ function Home() {
 
     loadings.current.map((v, i) => {
       var target = i < ContentAnim.current.length - 1 ? i + 1 : 0;
-      console.log('target=>', target);
-      console.log(SVGAnimRef.current[target], ...ContentAnim.current[target]);
       if (i === 0) {
         SlideTimeline.current[i].fromTo(
           [SVGAnimRef.current[i + 1], ...ContentAnim.current[i + 1]],
@@ -91,7 +89,6 @@ function Home() {
               timelineFrameNumber.current = 1;
             }
 
-            console.log(timelineFrameNumber.current - 1);
             SlideTimeline.current[timelineFrameNumber.current - 1].play(0);
           },
         },

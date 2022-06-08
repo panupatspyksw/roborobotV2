@@ -46,7 +46,7 @@ export const PageTransitionProvider = ({ children }) => {
           Path.current.parentElement.style.pointerEvents = 'fill';
         },
       })
-      .to($path, 0.7, {
+      .to($path, 0.5, {
         attr: { d: end },
         ease: 'Power2.easeOut',
         onStart: () => {

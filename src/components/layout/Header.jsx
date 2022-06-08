@@ -5,10 +5,12 @@ import { FiMenu } from 'react-icons/fi';
 import { GrClose } from 'react-icons/gr';
 import HeaderContext from '../context/HeaderContext';
 import { useContext } from 'react';
+import SessionContext from '../context/SessionContext';
 
 function Header() {
   const { mode, menulinks, disappear } = useContext(HeaderContext);
-
+  const { login, UserLogout } = useContext(SessionContext);
+  console.log('login=>', login);
   return (
     <>
       <header
@@ -49,9 +51,12 @@ function Header() {
               </span>
             </div>
           </NavLink>
-          <div className='d-block d-lg-none'>
+          <NavLink
+            className='text-decoration-none d-block d-lg-none'
+            to='/checkout'
+          >
             <Cart />
-          </div>
+          </NavLink>
 
           <div
             className='menulinks align-items-center d-none d-lg-flex'
@@ -81,16 +86,87 @@ function Header() {
                 <span className='me-3 d-block d-lg-none'>ตะกร้าสินค้า</span>
                 <Cart />
               </NavLink>
-              <div className='d-flex gap-lg-4 ms-lg-4'>
-                <NavLink className='text-decoration-none' to='/login'>
-                  <button className='btn rounded-pill px-3 '>
-                    เข้าสู่ระบบ
-                  </button>
-                </NavLink>
-                <NavLink className='text-decoration-none' to='/signup'>
-                  <button className='btn rounded-pill px-3 '>ลงทะเบียน</button>
-                </NavLink>
-              </div>
+              {login ? (
+                <div className='d-flex gap-lg-4 ms-lg-4'>
+                  <div className='dropdown text-end d-none d-lg-block'>
+                    <button
+                      className='border-0  bg-transparent d-block link-dark text-decoration-none dropdown-toggle'
+                      id='dropdownUser1'
+                      data-bs-toggle='dropdown'
+                      aria-expanded='true'
+                    >
+                      <img
+                        src='https://github.com/mdo.png'
+                        alt='mdo'
+                        width='40'
+                        height='40'
+                        className='rounded-circle'
+                      />
+                    </button>
+                    <ul
+                      className='dropdown-menu text-small '
+                      aria-labelledby='dropdownUser1'
+                      data-popper-placement='bottom-start'
+                      style={{
+                        position: 'absolute',
+                        inset: '0px auto auto 0px',
+                        margin: ' 0px',
+                        transform: 'translate3d(0px, 34px, 0px)',
+                      }}
+                    >
+                      <li>
+                        <div className='d-flex dropdown-item align-items-center'>
+                          <img
+                            src='https://github.com/mdo.png'
+                            alt='mdo'
+                            width='50'
+                            height='50'
+                            className='rounded-circle'
+                          />
+                          <div
+                            className='text-dark ms-2 overflow-hidden'
+                            style={{ maxWidth: '150px' }}
+                          >
+                            <div className='fw-md'>{login?.name}</div>
+                            <div
+                              style={{ fontSize: '13px' }}
+                              className='text-truncate'
+                            >
+                              {login?.email}
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <button className='dropdown-item text-dark'>
+                          คอร์สของฉัน
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          onClick={() => UserLogout()}
+                          className='dropdown-item text-dark'
+                        >
+                          ออกจากระบบ
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              ) : (
+                <div className='d-flex gap-lg-4 ms-lg-4'>
+                  <NavLink className='text-decoration-none' to='/login'>
+                    <button className='btn rounded-pill px-3 '>
+                      เข้าสู่ระบบ
+                    </button>
+                  </NavLink>
+                  <NavLink className='text-decoration-none' to='/signup'>
+                    <button className='btn rounded-pill px-3 '>
+                      ลงทะเบียน
+                    </button>
+                  </NavLink>
+                </div>
+              )}
             </ul>
           </div>
         </div>

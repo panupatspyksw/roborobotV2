@@ -58,7 +58,7 @@ body,html,#root{
 	color: var(--maincolor-1);
 }
 .text-subcolor-1{
-	color: var(--subcolor-1);
+	color: var(--subcolor-1)!important;
 }
 
 .fw-md{
@@ -113,6 +113,10 @@ background: var(--LinearBLUE);
 	border-radius: 56px;
 }
 
+.bg-LinearGRAY{
+	background: linear-gradient(180deg, #EDEDED 0%, #D3D3D3 100%)!important;
+}
+
 .btn{
 	border-radius: 400px;
 	color: white!important;
@@ -122,13 +126,21 @@ background: var(--LinearBLUE);
 	transform: scale(1);
 	transition: transform .3s;
 }
+.text-dark{
+	color: var(--textdark-color)!important;
+}
 .btn:hover{
-	transform: scale(0.9);
+	transform: scale(0.95);
 }
 .btn:focus{
 	transform: scale(1);
 }
-
+.dropdown-item{
+	background: white!important;
+}
+.dropdown-item:focus{
+	background: rgb(239, 239, 239)!important;
+}
 .w-fit{
 	width: fit-content;
 }
@@ -136,7 +148,10 @@ background: var(--LinearBLUE);
 
 
 .bg-SUBCOLOR-3-G{
-	background: linear-gradient(90deg, #F7A299 0%, #D8566E 100%);
+	background: linear-gradient(90deg, #F7A299 0%, #D8566E 100%)!important;
+}
+.bg-SUBCOLOR-3-G-vt{
+	background: linear-gradient(180deg, #F7A299 0%, #D8566E 100%)!important;
 }
 
 header{
