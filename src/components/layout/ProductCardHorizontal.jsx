@@ -3,7 +3,7 @@ import { FaClock, FaCalendar, FaTrash } from 'react-icons/fa';
 import { useContext } from 'react';
 import SessionContext from '../context/SessionContext';
 
-function ProductCardHorizontal({ props }) {
+function ProductCardHorizontal({ props, DeleteOn }) {
   const { removeItemCart } = useContext(SessionContext);
 
   const { cover, name, detail, timecourse, timeuse, price, id } = props;
@@ -44,12 +44,14 @@ function ProductCardHorizontal({ props }) {
             <div className='ms-lg-auto me-auto me-md-0 text-normal'>
               ฿{price}
             </div>
-            <button
-              className='border-0 bg-transparent text-center p-2 d-flex align-items-center justify-content-center'
-              onClick={() => removeItemCart(props)}
-            >
-              <FaTrash className='text-danger fs-4' />
-            </button>
+            {DeleteOn && (
+              <button
+                className='border-0 bg-transparent text-center p-2 d-flex align-items-center justify-content-center'
+                onClick={() => removeItemCart(props)}
+              >
+                <FaTrash className='text-danger fs-4' />
+              </button>
+            )}
           </div>
         </div>
       </div>
@@ -67,6 +69,7 @@ ProductCardHorizontal.defaultProps = {
     timeuse: '3',
     price: '9000',
   },
+  DeleteOn: true,
 };
 
 export default ProductCardHorizontal;

@@ -4,7 +4,7 @@ import { BsFillCartDashFill, BsFillCartPlusFill } from 'react-icons/bs';
 import { useContext } from 'react';
 import SessionContext from '../context/SessionContext';
 
-function ProductCard({ props }) {
+function ProductCard({ props, type }) {
   const { addItemCart, removeItemCart, checkItemNotInCarts } =
     useContext(SessionContext);
 
@@ -41,25 +41,28 @@ function ProductCard({ props }) {
                 เรียน {timeuse} เดือน
               </span>
             </div>
-            <div className='ms-auto fw-bold text-normal'>฿{price}</div>
+            {type !== 'mycourse' && (
+              <div className='ms-auto fw-bold text-normal'>฿{price}</div>
+            )}
           </div>
-          {checkItemNotInCarts(props) ? (
-            <button
-              className='btn w-100 py-3 d-flex align-items-center justify-content-center mt-3'
-              onClick={() => addItemCart(props)}
-            >
-              <BsFillCartPlusFill className='me-3 fs-4' />
-              เพิ่มลงตะกร้า
-            </button>
-          ) : (
-            <button
-              className='btn bg-SUBCOLOR-3-G-vt border-0 rounded-pill btn-danger w-100 py-3 d-flex align-items-center justify-content-center mt-3'
-              onClick={() => removeItemCart(props)}
-            >
-              <BsFillCartDashFill className='me-3 fs-4' />
-              นำออกจากตะกร้า
-            </button>
-          )}
+          {type !== 'mycourse' &&
+            (checkItemNotInCarts(props) ? (
+              <button
+                className='btn w-100 py-3 d-flex align-items-center justify-content-center mt-3'
+                onClick={() => addItemCart(props)}
+              >
+                <BsFillCartPlusFill className='me-3 fs-4' />
+                เพิ่มลงตะกร้า
+              </button>
+            ) : (
+              <button
+                className='btn bg-SUBCOLOR-3-G-vt border-0 rounded-pill btn-danger w-100 py-3 d-flex align-items-center justify-content-center mt-3'
+                onClick={() => removeItemCart(props)}
+              >
+                <BsFillCartDashFill className='me-3 fs-4' />
+                นำออกจากตะกร้า
+              </button>
+            ))}
         </div>
       </div>
     </div>
@@ -76,6 +79,7 @@ ProductCard.defaultProps = {
     timeuse: '3',
     price: '9000',
   },
+  type: false,
 };
 
 export default ProductCard;

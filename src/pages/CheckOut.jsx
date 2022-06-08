@@ -31,9 +31,12 @@ function CheckOut() {
                       <h1 className=' f-eng fw-bold'>
                         ฿{total.toLocaleString()}
                       </h1>
-                      <button className='btn col-12 border-0 rounded-pill btn-danger w-100 py-3 d-flex align-items-center justify-content-center mt-3'>
+                      <Link
+                        to={'/payment'}
+                        className='btn col-12 border-0 rounded-pill btn-danger w-100 py-3 d-flex align-items-center justify-content-center mt-3'
+                      >
                         ยืนยันออเดอร์
-                      </button>
+                      </Link>
                       <Link
                         to='/courses'
                         className='btn col-12 bg-LinearGRAY text-dark border-0 rounded-pill w-100 py-3 d-flex align-items-center justify-content-center mt-3'

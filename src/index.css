@@ -156,11 +156,40 @@ background: var(--LinearBLUE);
 
 header{
 	opacity: 1;
-	transition: opacity .3s;
+	background-color: transparent;
+	transition: opacity .3s, background .3s;
 }
-header.disappear{
-	opacity: 0;
+
+header .logo{
+	transform: scale(1)!important;
+	transition: transform .3s;
 }
+header .py-3{
+	padding-top: 2rem!important;
+    padding-bottom:  2rem!important;
+	transition: padding .3s;
+}
+header.disappear .py-3{
+	padding-top: 15px!important;
+    padding-bottom: 15px!important;
+}
+header.disappear .logo{
+	transform: scale(0.8)!important;
+}
+header.head-light.disappear{
+	background: rgb(255, 255, 255);
+	background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+
+	/* opacity: 0; */
+}
+header.head-dark.disappear{
+	background: rgb(48,66,132);
+background: linear-gradient(180deg, rgba(48,66,132,1) 0%, rgba(48,66,132,0) 100%);
+	/* opacity: 0; */
+}
+
+
+
 
 header .nav-dark a{
 	color: white;
@@ -202,12 +231,18 @@ header .nav-light a button{
 .letter-space-20p{
 letter-spacing: 0.2rem;
 }
-
+.mxmx{
+	z-index: 3002!important;
+}
+.modal-backdrop{
+	z-index: 3000!important;
+}
 .progress-ring__circle {
 	transition: 0.35s stroke-dashoffset;
 	transform: rotate(-90deg);
 	transform-origin: 50% 50%;
   }
+
   
 /* menuliks */
 

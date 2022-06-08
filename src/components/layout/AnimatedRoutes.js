@@ -5,6 +5,8 @@ import Courses from '../../pages/Courses';
 import Login from '../../pages/Login';
 import Signup from '../../pages/Signup';
 import CheckOut from '../../pages/CheckOut';
+import Payment from '../../pages/Payment';
+import MyCourses from '../../pages/MyCourses';
 
 import NotFound from '../../pages/NotFound';
 import { AnimatePresence } from 'framer-motion';
@@ -22,6 +24,8 @@ function AnimatedRoutes() {
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
         <Route path='/checkout' element={<CheckOut />}></Route>
+        <Route path='/payment' element={<Payment />}></Route>
+        <Route path='/mycourses' element={<MyCourses />}></Route>
 
         <Route path='/notfound' element={<NotFound />}></Route>
         <Route path='/*' element={<NotFound />}></Route>

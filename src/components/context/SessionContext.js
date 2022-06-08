@@ -48,6 +48,7 @@ export const SessionProvider = ({ children }) => {
       email = login.email ?? 'example@gmail.com',
       password = login.password ?? '123',
     } = data;
+
     window.location.pathname = '/';
 
     localStorage.setItem(
@@ -62,12 +63,10 @@ export const SessionProvider = ({ children }) => {
   };
 
   const UserLogout = async () => {
-    console.log(login);
     window.location.pathname = '/login';
 
     await setLogin(false);
     await localStorage.removeItem('login');
-    // navigate('/');
 
     return null;
   };

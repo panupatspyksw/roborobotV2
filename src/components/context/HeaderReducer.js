@@ -13,12 +13,12 @@ function HeaderReducer(state, action) {
     case 'HIDING':
       return {
         ...state,
-        disappear: true,
+        nottop: true,
       };
     case 'SHOWING':
       return {
         ...state,
-        disappear: false,
+        nottop: false,
       };
     case 'SwitchNavToLight':
       return {

@@ -7,6 +7,7 @@ import AnimatedRoutes from './components/layout/AnimatedRoutes';
 import { PageTransitionProvider } from './components/context/PageTransitionContext';
 import PageTransition from './components/layout/PageTransition';
 import { SessionProvider } from './components/context/SessionContext';
+
 function App() {
   return (
     <Router>
