@@ -21,7 +21,7 @@ function Alert({ show }) {
       },
     });
   };
-
+  // eslint-disable-next-line
   const FadeOut = () => {
     gsap.to(modal.current, {
       opacity: 0,
