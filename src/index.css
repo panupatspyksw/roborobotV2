@@ -243,7 +243,9 @@ letter-spacing: 0.2rem;
 	transform-origin: 50% 50%;
   }
 
-  
+  .bg-cover{
+	  background-size: cover!important;
+  }
 /* menuliks */
 
 @media (max-width: 575.98px) and (max-height: 800px) { 

@@ -12,7 +12,7 @@ function ProductCardHorizontal({ props, DeleteOn }) {
       <div className='w-100 overflow-hidden d-flex flex-column flex-md-row  gap-3 align-items-stretch'>
         <div className='col-12 col-md-3'>
           <div
-            className=''
+            className='bg-cover bg-dark'
             style={{
               borderRadius: '20px',
               background: `url(${cover})`,
