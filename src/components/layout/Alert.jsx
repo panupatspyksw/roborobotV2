@@ -66,8 +66,11 @@ function Alert({ show }) {
       }}
       ref={modal}
     >
-      <div className='p-5 bg-white col-5' style={{ borderRadius: '30px' }}>
-        <div className='px-5 text-center'>
+      <div
+        className='p-5 bg-white col-10 col-md-7 col-xl-5'
+        style={{ borderRadius: '30px' }}
+      >
+        <div className='px-lg-5 text-center'>
           <div className='position-relative back col-12' ref={AnimTarget}></div>
           <h1 className='fw-md pt-4'>ชำระเงินเสร็จสิ้น</h1>
         </div>
