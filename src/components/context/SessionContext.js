@@ -41,6 +41,12 @@ export const SessionProvider = ({ children }) => {
     return null;
   };
 
+  const clearItemsInCart = () => {
+    setCarts([]);
+    localStorage.setItem('carts', JSON.stringify([]));
+    return null;
+  };
+
   const UserLogin = (data) => {
     var {
       username = login.username ?? 'user123',
@@ -85,6 +91,7 @@ export const SessionProvider = ({ children }) => {
         checkItemNotInCarts,
         UserLogin,
         UserLogout,
+        clearItemsInCart,
       }}
     >
       {children}

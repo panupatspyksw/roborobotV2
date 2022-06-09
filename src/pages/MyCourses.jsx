@@ -7,9 +7,9 @@ import data from '../components/data/Products.json';
 
 function Payment() {
   const { scrollRef } = useContext(ScrollContext);
-  const { carts, login } = useContext(SessionContext);
+  const { login } = useContext(SessionContext);
   useEffect(() => {
-    if (carts.length < 1 || login === false) {
+    if (login === false) {
       window.location.pathname = '/login';
     }
     // eslint-disable-next-line

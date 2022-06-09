@@ -76,6 +76,7 @@ function Payment() {
                         </div>
                         {carts.map((product) => (
                           <ProductCardHorizontal
+                            key={product.id}
                             props={product}
                             DeleteOn={false}
                           />
