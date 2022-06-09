@@ -89,12 +89,9 @@ export const ScrollProvider = ({ children }) => {
         scroller: scrollRef.current,
         // markers: true,
         onEnter: () => {
-          console.log('what haooern1');
           dispatch({ type: 'SwitchNavToLight' });
         },
         onEnterBack: () => {
-          console.log('what haooern2');
-
           dispatch({ type: 'SwitchNavToLight' });
         },
       });

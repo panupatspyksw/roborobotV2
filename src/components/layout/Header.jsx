@@ -10,7 +10,6 @@ import SessionContext from '../context/SessionContext';
 function Header() {
   const { mode, menulinks, nottop } = useContext(HeaderContext);
   const { login, UserLogout } = useContext(SessionContext);
-  console.log('login=>', login);
   return (
     <>
       <header

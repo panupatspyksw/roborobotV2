@@ -15,11 +15,11 @@ function Alert({ show }) {
       container: AnimTarget.current,
       renderer: 'svg',
       loop: false,
-      autoplay: true,
+      autoplay: false,
       animationData: Success,
     };
 
-    lottie.loadAnimation(Anim).goToAndPlay(0);
+    AnimLottie.current = lottie.loadAnimation(Anim);
   }, []);
   useEffect(() => {
     if (show) {
@@ -34,16 +34,15 @@ function Alert({ show }) {
       duration: 0.3,
       pointerEvents: 'fill',
       onStart: () => {
-        setTimeout(() => {
-          AnimLottie.current?.play();
-        }, 2000);
+        console.log(AnimLottie.current);
+        AnimLottie.current.playSegments([0, 200], true);
       },
       onComplete: () => {
         setTimeout(() => {
           window.location.pathname = '/mycourses';
           clearItemsInCart();
-          //   FadeOut();
-        }, 1000);
+          // FadeOut();
+        }, 2500);
       },
     });
   };

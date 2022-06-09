@@ -31,7 +31,6 @@ export const PageTransitionProvider = ({ children }) => {
   };
 
   const PageTransitionOff = () => {
-    console.log('fired pagetransition off');
     let $path = Path.current;
     const start = 'M 0 100 V 30 Q 50 70 100 30 V 100 z';
     const end = 'M 0 100 V 100 Q 50 100 100 100 V 100 z';
