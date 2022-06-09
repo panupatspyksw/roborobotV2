@@ -11,8 +11,11 @@ function Payment() {
   const [submit, setSubmit] = useState(false);
   const total = carts.map((e) => Number(e.price)).reduce((a, b) => a + b, 0);
   useEffect(() => {
-    if (carts.length < 1 || login === false) {
+    console.log(login);
+    if (carts.length < 1) {
       window.location.pathname = '/courses';
+    } else if (login === false) {
+      window.location.pathname = '/login';
     }
     // eslint-disable-next-line
   }, []);

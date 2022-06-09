@@ -8,6 +8,7 @@ function CheckOut() {
   const { scrollRef } = useContext(ScrollContext);
   const { carts } = useContext(SessionContext);
   const total = carts.map((e) => Number(e.price)).reduce((a, b) => a + b, 0);
+
   return (
     <TransitionPage>
       <div ref={scrollRef}>
@@ -23,7 +24,10 @@ function CheckOut() {
                         {carts.length} รายการในตะกร้าสินค้า
                       </div>
                       {carts.map((product) => (
-                        <ProductCardHorizontal props={product} />
+                        <ProductCardHorizontal
+                          key={product.id}
+                          props={product}
+                        />
                       ))}
                     </div>
                     <div className='col-lg-3'>

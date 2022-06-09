@@ -14,7 +14,7 @@ import CODINGROBOTIC from '../assets/SVG/CODINGROBOTIC';
 import ReviewCardList from '../components/layout/ReviewCardList';
 import SendMail from '../assets/SVG/SendMail';
 import Curve from '../assets/SVG/Curve';
-
+import { Link } from 'react-router-dom';
 function Home() {
   const { scrollRef } = useContext(ScrollContext);
   const { tl } = useContext(PageTransitionContext);
@@ -151,12 +151,13 @@ function Home() {
                     <span> เพื่อพัฒนาทักษะเด็ก</span>
                     <span>ให้พร้อมเติบโตในศตวรรษที่ 21</span>
                   </p>
-                  <button
+                  <Link
+                    to='/about'
                     className=' w-fit btn px-5 py-3 text-normal'
                     ref={(el) => (ContentAnim.current[0][4] = el)}
                   >
                     เรียนรู้เพิ่มเติม
-                  </button>
+                  </Link>
                 </div>
                 {/* content 2 */}
                 <div className='position-absolute'>
@@ -179,12 +180,13 @@ function Home() {
                     <span>เรียนสนุก เพลิดเพลิน กับบทเรียน</span>
                     <span>ราคาเข้าถึงจับต้องได้</span>
                   </p>
-                  <button
+                  <Link
+                    to='/courses'
                     className='w-fit btn px-5 py-3 text-normal'
                     ref={(el) => (ContentAnim.current[1][3] = el)}
                   >
                     ซื้อคอร์ส
-                  </button>
+                  </Link>
                 </div>
                 <div
                   className='loading position-absolute bottom-0 d-flex flex-column gap-3 flex-md-row pt-3 end-0-sm-only translate-md-y-100 end-lg-0 pt-md-5'
