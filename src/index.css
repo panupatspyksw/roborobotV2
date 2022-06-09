@@ -331,6 +331,16 @@ letter-spacing: 0.2rem;
 	header .nav-dark .menulinks::before{
 		background-color: var(--mainbg-color);
 	}
+	header .nav-dark .menulinks::before{
+		background-color: var(--mainbg-color);
+	}
+	.dropdown-item{
+		background: transparent!important;
+	}
+	.nav-dark .dropdown-item, .nav-dark .dropdown-item >*{
+		color: white!important;
+	}
+
 	.menulinks::before{
 		z-index: 1100;
 		width: 100%;

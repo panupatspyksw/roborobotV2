@@ -120,10 +120,10 @@ function Header() {
                 <Cart />
               </NavLink>
               {login && (
-                <li className='py-3 bb w-100 d-block d-md-none'>
+                <li className='p-3 ps-0 bb w-100 d-block d-md-none bg-transparent'>
                   <button
                     onClick={() => UserLogout()}
-                    className='dropdown-item text-dark'
+                    className='dropdown-item text-dark bg-transparent'
                   >
                     ออกจากระบบ
                   </button>
